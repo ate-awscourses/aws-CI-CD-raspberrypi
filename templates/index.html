@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andy Te | Edge Computing Portfolio</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f9; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .metrics-board { background: #2c3e50; color: white; padding: 20px; border-radius: 8px; margin-top: 20px; }
+        h1, h2 { color: #333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Andy Te</h1>
+        <p>Costa Mesa, CA | IT Support Engineer</p>
+        
+        <h2>Professional Summary</h2>
+        <p>Solutions-driven Technical Support Engineer with 6+ years of experience managing SaaS production environments, IoT deployments, and AWS cloud infrastructure[cite: 1].</p>
+
+        <h2>Download Resume</h2>
+        <p><a href="/static/ATe_Resume.pdf" target="_blank">View ATe_Resume.pdf</a></p>
+        
+        <div class="metrics-board">
+            <h2>Live Raspberry Pi 5 Telemetry</h2>
+            <p>CPU Load: <span id="cpu">Loading...</span>%</p>
+            <p>Memory Usage: <span id="memory">Loading...</span>%</p>
+        </div>
+    </div>
+
+    <script>
+        // Fetch live metrics from the Python backend every 3 seconds
+        setInterval(() => {
+            fetch('/api/metrics')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('cpu').innerText = data.cpu_percent;
+                    document.getElementById('memory').innerText = data.memory_percent;
+                });
+        }, 3000);
+    </script>
+</body>
+</html>
