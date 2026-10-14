@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andy Te | IT Support & Cloud Automation Engineer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkbg: '#0b0f19',
+                        cardbg: '#111827',
+                        accent: '#3b82f6',
+                        accenthover: '#2563eb'
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .font-mono-custom { font-family: 'Fira Code', monospace; }
+        .glow { box-shadow: 0 0 25px -5px rgba(59, 130, 246, 0.3); }
+    </style>
+</head>
+<body class="bg-darkbg text-gray-100 min-h-screen flex flex-col justify-between selection:bg-accent selection:text-white">
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-darkbg/80 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('home')">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-400 flex items-center justify-center glow">
+                    <i class="fa-solid fa-server text-white text-lg"></i>
+                </div>
+                <div>
+                    <span class="font-bold text-lg tracking-tight">Andy Te</span>
+                    <span class="block text-xs text-blue-400 font-mono-custom">IT Support & Cloud Engineer</span>
+                </div>
+            </div>
+
+            <!-- Tab Navigation Links -->
+            <nav class="hidden md:flex space-x-1 bg-cardbg p-1 rounded-xl border border-gray-800">
+                <button onclick="switchTab('home')" id="nav-home" class="px-4 py-2 rounded-lg text-sm font-medium transition-all bg-accent text-white shadow-md">Home</button>
+                <button onclick="switchTab('resume')" id="nav-resume" class="px-4 py-2 rounded-lg text-sm font-medium transition-all text-gray-400 hover:text-white hover:bg-gray-800">Resume</button>
+                <button onclick="switchTab('projects')" id="nav-projects" class="px-4 py-2 rounded-lg text-sm font-medium transition-all text-gray-400 hover:text-white hover:bg-gray-800">Projects</button>
+                <button onclick="switchTab('terminal')" id="nav-terminal" class="px-4 py-2 rounded-lg text-sm font-medium transition-all text-gray-400 hover:text-white hover:bg-gray-800">Terminal & CLI</button>
+            </nav>
+
+            <!-- Quick Action -->
+            <div class="flex items-center space-x-3">
+                <a href="mailto:andrewte1995@outlook.com" class="hidden sm:inline-flex items-center px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium transition-all shadow-lg shadow-blue-500/20">
+                    <i class="fa-regular fa-envelope mr-2"></i> Contact Me
+                </a>
+                <!-- Mobile menu toggle -->
+                <button onclick="toggleMobileMenu()" class="md:hidden text-gray-400 hover:text-white p-2">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 bg-cardbg border-b border-gray-800">
+            <button onclick="switchTab('home'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-white bg-accent">Home</button>
+            <button onclick="switchTab('resume'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800">Resume</button>
+            <button onclick="switchTab('projects'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800">Projects</button>
+            <button onclick="switchTab('terminal'); toggleMobileMenu();" class="block w-full text-left px-3 py-2 rounded-lg text-base font-medium text-gray-300 hover:bg-gray-800">Terminal & CLI</button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+
+        <!-- ================= TAB 1: HOME ================= -->
+        <div id="tab-home" class="space-y-10 animate-fade">
+            <!-- Hero Section -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono-custom">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>Raspberry Pi 5 Edge Node Active • Costa Mesa, CA</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+                        Bridging <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">IT Support</span> & <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Cloud Infrastructure</span>
+                    </h1>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        I am an IT Support & Cloud Automation Engineer specializing in robust system integrations, AWS cloud observability, and edge computing architectures built on Raspberry Pi 5.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <button onclick="switchTab('projects')" class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium transition-all shadow-lg shadow-blue-500/20 flex items-center space-x-2">
+                            <span>Explore Projects</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <button onclick="switchTab('resume')" class="px-6 py-3 rounded-xl bg-cardbg hover:bg-gray-800 border border-gray-700 text-white font-medium transition-all flex items-center space-x-2">
+                            <i class="fa-regular fa-file-lines text-blue-400"></i>
+                            <span>View Resume</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Live Raspberry Pi Telemetry Widget -->
+                <div class="lg:col-span-5 bg-cardbg border border-gray-800 rounded-2xl p-6 shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10">
+                        <i class="fa-solid fa-microchip text-8xl text-blue-400"></i>
+                    </div>
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center space-x-2">
+                            <i class="fa-solid fa-cube text-blue-400"></i>
+                            <h3 class="font-bold text-white tracking-wide">Pi 5 Edge Telemetry</h3>
+                        </div>
+                        <span class="px-2.5 py-1 rounded-full text-xs font-mono-custom bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Online</span>
+                    </div>
+
+                    <div class="space-y-4 font-mono-custom text-sm">
+                        <div>
+                            <div class="flex justify-between text-xs text-gray-400 mb-1">
+                                <span>CPU Temperature</span>
+                                <span id="cpu-temp" class="text-blue-400 font-bold">42.8°C</span>
+                            </div>
+                            <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                                <div id="cpu-bar" class="bg-blue-500 h-full transition-all duration-500" style="width: 42%;"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs text-gray-400 mb-1">
+                                <span>Memory Usage (4GB/8GB)</span>
+                                <span id="mem-usage" class="text-cyan-400 font-bold">34.2%</span>
+                            </div>
+                            <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                                <div id="mem-bar" class="bg-cyan-500 h-full transition-all duration-500" style="width: 34%;"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-xs text-gray-400 mb-1">
+                                <span>Disk Storage (/dev/nvme0n1)</span>
+                                <span class="text-emerald-400 font-bold">18.4 / 120 GB (15%)</span>
+                            </div>
+                            <div class="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                                <div class="bg-emerald-500 h-full" style="width: 15%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2 border-t border-gray-800 text-xs space-y-1.5 text-gray-400">
+                            <div class="flex justify-between">
+                                <span class="text-gray-500">AWS Cloud Sync:</span>
+                                <span class="text-emerald-400"><i class="fa-solid fa-check-circle mr-1"></i> S3 / SQS Active</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-500">Kubernetes EKS Node:</span>
+                                <span class="text-blue-400">ip-192-168-1-50</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Expertise Grid -->
+            <div class="pt-8">
+                <h2 class="text-2xl font-bold mb-6 flex items-center">
+                    <i class="fa-solid fa-layer-group text-blue-400 mr-3"></i> Core Technical Stack
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-cardbg border border-gray-800 p-6 rounded-2xl hover:border-blue-500/50 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4">
+                            <i class="fa-solid fa-cloud text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Cloud & DevOps</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            AWS Services (S3, SQS, SNS, Kinesis, CloudWatch, DynamoDB, EKS), Terraform Infrastructure as Code, CI/CD automated deployment pipelines.
+                        </p>
+                    </div>
+
+                    <div class="bg-cardbg border border-gray-800 p-6 rounded-2xl hover:border-blue-500/50 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-4">
+                            <i class="fa-solid fa-terminal text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">Systems & Automation</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Linux administration, Raspberry Pi OS edge nodes, Python scripting, JavaScript, MySQL databases, Postman API & Swagger device provisioning.
+                        </p>
+                    </div>
+
+                    <div class="bg-cardbg border border-gray-800 p-6 rounded-2xl hover:border-blue-500/50 transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4">
+                            <i class="fa-solid fa-headset text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">IT Support Operations</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Enterprise troubleshooting, ticket resolution workflows, system telemetry monitoring, documentation, and root-cause investigation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= TAB 2: RESUME ================= -->
+        <div id="tab-resume" class="hidden space-y-8 animate-fade">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-cardbg border border-gray-800 p-6 rounded-2xl gap-4">
+                <div>
+                    <h2 class="text-2xl font-bold">Andy Te</h2>
+                    <p class="text-blue-400 font-mono-custom text-sm">IT Support Engineer II • Costa Mesa, CA</p>
+                </div>
+                <div class="flex space-x-3">
+                    <button onclick="window.print()" class="px-4 py-2 rounded-xl bg-gray-800 hover:bg-gray-700 border border-gray-700 text-sm font-medium transition-all flex items-center space-x-2">
+                        <i class="fa-solid fa-print"></i>
+                        <span>Print / Save PDF</span>
+                    </button>
+                    <a href="mailto:andrewte1995@outlook.com" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-sm font-medium transition-all text-white flex items-center space-x-2">
+                        <i class="fa-regular fa-paper-plane"></i>
+                        <span>Get in Touch</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Left Column: Skills & Education -->
+                <div class="space-y-6">
+                    <div class="bg-cardbg border border-gray-800 p-6 rounded-2xl">
+                        <h3 class="font-bold text-lg mb-4 text-blue-400 border-b border-gray-800 pb-2">Technical Skills</h3>
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <span class="font-semibold text-gray-300 block mb-1">Cloud & Infrastructure</span>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2.5 py-1 bg-gray-800 rounded-md text-xs font-mono-custom">AWS (S3, SQS, SNS, EKS)</span>
+                                    <span class="px-2.5 py-1 bg-gray-800 rounded-md text-xs font-mono-custom">Terraform</span>
+                                    <span class="px-2.5 py-1 bg-gray-800 rounded-md text-xs font-mono-custom">Kubernetes</span>
+                                    <span class="px-2.5 py-1 bg-gray-800 rounded-md text-xs font-mono-custom">Docker</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-gray-300 block mb-1">Languages & DB</span>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2.5 py-1 bg-gray-800 rounded-md text-xs font-mono-custom">Python</span>
+                                    <span class="px-2.5 py-1 bg-gray-800 rounded-md text-xs font-mono-custom">JavaScript</span>
+                                    <span class="px-2.5 py-1 bg-gray-800 rounded-md text-xs font-mono-custom">MySQL</span>
+                                    <span class="px-2.5 py-1 bg-gray-800 rounded-md text-xs font-mono-custom">Bash</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-gray-300 block mb-1">Tools & Protocols</span>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="px-2.5 py-1 bg-gray-800 rounded-md text-xs font-mono-custom">Postman API</span>
+                                    <span class="px-2.5 py-1 bg-gray-800 rounded-md text-xs font-mono-custom">Swagger</span>
+                                    <span class="px-2.5 py-1 bg-gray-800 rounded-md text-xs font-mono-custom">Git / GitHub</span>
+                                    <span class="px-2.5 py-1 bg-gray-800 rounded-md text-xs font-mono-custom">CloudWatch</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Professional Experience -->
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="bg-cardbg border border-gray-800 p-6 rounded-2xl space-y-6">
+                        <h3 class="font-bold text-lg text-blue-400 border-b border-gray-800 pb-2">Professional Experience</h3>
+                        
+                        <div class="space-y-2">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-bold text-white">IT Support Engineer II</h4>
+                                    <span class="text-blue-400 text-sm">Systems Support & Cloud Operations</span>
+                                </div>
+                                <span class="text-xs font-mono-custom text-gray-500 bg-gray-800 px-2.5 py-1 rounded">Present</span>
+                            </div>
+                            <ul class="list-disc list-inside text-gray-400 text-sm space-y-2 pt-2">
+                                <li>Managed systems support operations, diagnosing and resolving complex hardware, software, and networking incidents.</li>
+                                <li>Implemented AWS CloudWatch monitoring workflows to track infrastructure metrics, reduce mean time to resolution, and alert on system anomalies.</li>
+                                <li>Engineered automated scripts using Python and Postman API to streamline device provisioning and service integrations.</li>
+                                <li>Maintained MySQL database queries and optimized data storage for support logging systems.</li>
+                            </ul>
+                        </div>
+
+                        <div class="border-t border-gray-800 pt-6 space-y-2">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h4 class="font-bold text-white">Cloud Support & Automation Projects</h4>
+                                    <span class="text-cyan-400 text-sm">Edge Computing & IoT Architecture</span>
+                                </div>
+                                <span class="text-xs font-mono-custom text-gray-500 bg-gray-800 px-2.5 py-1 rounded">2025 - Present</span>
+                            </div>
+                            <ul class="list-disc list-inside text-gray-400 text-sm space-y-2 pt-2">
+                                <li>Architected <code class="text-blue-400 font-mono-custom">aws-IoT-raspberrypi</code> transmitting live CPU, memory, and disk telemetry from edge devices to AWS every 30 seconds.</li>
+                                <li>Deployed <code class="text-blue-400 font-mono-custom">aws-EKS-Hybrid-raspberrypi</code> configuring ARM64 Kubernetes clusters on Raspberry Pi 5 hardware using Terraform.</li>
+                                <li>Built automated CI/CD pipelines utilizing GitHub Actions for seamless static site deployment and infrastructure validation.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= TAB 3: PROJECTS ================= -->
+        <div id="tab-projects" class="hidden space-y-8 animate-fade">
+            <div>
+                <h2 class="text-2xl font-bold mb-2">Featured Portfolio Projects</h2>
+                <p class="text-gray-400 text-sm">Explore my open-source repositories combining edge hardware, AWS cloud automation, and CI/CD pipelines.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Project 1 -->
+                <div class="bg-cardbg border border-gray-800 p-6 rounded-2xl flex flex-col justify-between hover:border-blue-500/50 transition-all">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full text-xs font-mono-custom">AWS IoT Core</span>
+                            <i class="fa-brands fa-github text-xl text-gray-400"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-white">aws-IoT-raspberrypi</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Environmental and system telemetry monitor transmitting CPU, memory, and disk usage metrics from Raspberry Pi 5 edge nodes to AWS cloud architecture every 30 seconds.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono-custom text-gray-300">Python</span>
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono-custom text-gray-300">AWS S3/SNS/SQS</span>
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono-custom text-gray-300">Raspberry Pi OS</span>
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-gray-800 flex items-center justify-between">
+                        <span class="text-xs text-emerald-400 font-mono-custom"><i class="fa-solid fa-circle text-[8px] mr-1"></i> Active Telemetry</span>
+                        <a href="https://github.com/ate-awscourses/aws-IoT-raspberrypi" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center space-x-1">
+                            <span>Repository</span>
+                            <i class="fa-solid fa-external-link-alt text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-cardbg border border-gray-800 p-6 rounded-2xl flex flex-col justify-between hover:border-blue-500/50 transition-all">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-mono-custom">Kubernetes & Terraform</span>
+                            <i class="fa-brands fa-github text-xl text-gray-400"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-white">aws-EKS-Hybrid-raspberrypi</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Hybrid edge-to-cloud environment utilizing Amazon EKS, ARM64 Kubernetes cluster nodes on Raspberry Pi 5, and automated Terraform infrastructure provisioning.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono-custom text-gray-300">Terraform</span>
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono-custom text-gray-300">Kubernetes</span>
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono-custom text-gray-300">AWS EKS</span>
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-gray-800 flex items-center justify-between">
+                        <span class="text-xs text-blue-400 font-mono-custom"><i class="fa-solid fa-circle text-[8px] mr-1"></i> ARM64 Cluster</span>
+                        <a href="https://github.com/ate-awscourses/aws-EKS-Hybrid-raspberrypi" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center space-x-1">
+                            <span>Repository</span>
+                            <i class="fa-solid fa-external-link-alt text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-cardbg border border-gray-800 p-6 rounded-2xl flex flex-col justify-between hover:border-blue-500/50 transition-all">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="px-3 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full text-xs font-mono-custom">CI/CD Pipeline</span>
+                            <i class="fa-brands fa-github text-xl text-gray-400"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-white">aws-CI-CD-raspberrypi</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Automated CI/CD workflow repository hosting this interactive multi-tab portfolio website with live GitHub Actions static deployment to GitHub Pages.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono-custom text-gray-300">GitHub Actions</span>
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono-custom text-gray-300">Tailwind CSS</span>
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono-custom text-gray-300">HTML5/JS</span>
+                        </div>
+                    </div>
+                    <div class="pt-6 border-t border-gray-800 flex items-center justify-between">
+                        <span class="text-xs text-emerald-400 font-mono-custom"><i class="fa-solid fa-check text-[8px] mr-1"></i> Live Deployment</span>
+                        <a href="https://github.com/ate-awscourses/aws-CI-CD-raspberrypi" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center space-x-1">
+                            <span>Repository</span>
+                            <i class="fa-solid fa-external-link-alt text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= TAB 4: TERMINAL & CLI ================= -->
+        <div id="tab-terminal" class="hidden space-y-6 animate-fade">
+            <div>
+                <h2 class="text-2xl font-bold mb-2">Interactive Cyber Terminal</h2>
+                <p class="text-gray-400 text-sm">Type commands below like <code class="text-blue-400 font-mono-custom">help</code>, <code class="text-blue-400 font-mono-custom">bio</code>, <code class="text-blue-400 font-mono-custom">skills</code>, <code class="text-blue-400 font-mono-custom">projects</code>, or <code class="text-blue-400 font-mono-custom">clear</code>.</p>
+            </div>
+
+            <div class="bg-[#090d16] border border-gray-800 rounded-2xl overflow-hidden shadow-2xl font-mono-custom text-sm">
+                <!-- Terminal Window Header -->
+                <div class="bg-cardbg px-4 py-3 border-b border-gray-800 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span class="text-xs text-gray-400 ml-2">andrewte1995@RaspberryPI5:~ (bash)</span>
+                    </div>
+                    <span class="text-xs text-emerald-400"><i class="fa-solid fa-circle text-[8px] mr-1"></i> SSH Secure Session</span>
+                </div>
+
+                <!-- Terminal Output Body -->
+                <div id="terminal-output" class="p-6 h-80 overflow-y-auto space-y-3 text-gray-300">
+                    <div>
+                        <span class="text-blue-400">andrewte1995@RaspberryPI5</span>:<span class="text-cyan-400">~</span>$ <span class="text-white">uname -a</span>
+                        <div class="text-gray-400 text-xs mt-1">Linux RaspberryPI5 6.6.20+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.6.20-1+rpt1 (2024-03-07) aarch64 GNU/Linux</div>
+                    </div>
+                    <div>
+                        <span class="text-blue-400">andrewte1995@RaspberryPI5</span>:<span class="text-cyan-400">~</span>$ <span class="text-white">./portfolio-cli.py --init</span>
+                        <div class="text-emerald-400 text-xs mt-1">[INFO] Portfolio CLI initialized successfully. Type <span class="text-yellow-400">'help'</span> for available commands.</div>
+                    </div>
+                </div>
+
+                <!-- Terminal Input Form -->
+                <form id="terminal-form" onsubmit="handleTerminalCommand(event)" class="bg-cardbg px-4 py-3 border-t border-gray-800 flex items-center space-x-2">
+                    <span class="text-blue-400 text-xs sm:text-sm">andrewte1995@RaspberryPI5:~$</span>
+                    <input id="terminal-input" type="text" autocomplete="off" autofocus class="bg-transparent flex-grow text-white outline-none font-mono-custom text-sm" placeholder="Type a command...">
+                    <button type="submit" class="px-3 py-1 bg-blue-600 hover:bg-blue-500 text-white text-xs rounded-lg transition-all">Send</button>
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 bg-darkbg mt-16 py-8 text-center text-sm text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                © 2026 Andy Te. Built on Raspberry Pi 5 & Hosted via GitHub Actions CI/CD.
+            </div>
+            <div class="flex space-x-6 text-gray-400 text-lg">
+                <a href="https://github.com/ate-awscourses" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:andrewte1995@outlook.com" class="hover:text-white transition-colors"><i class="fa-regular fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Client-Side JavaScript Logic -->
+    <script>
+        // Tab Navigation Switcher
+        function switchTab(tabId) {
+            const tabs = ['home', 'resume', 'projects', 'terminal'];
+            tabs.forEach(t => {
+                const el = document.getElementById(`tab-${t}`);
+                const btn = document.getElementById(`nav-${t}`);
+                if (t === tabId) {
+                    el.classList.remove('hidden');
+                    if(btn) {
+                        btn.className = "px-4 py-2 rounded-lg text-sm font-medium transition-all bg-accent text-white shadow-md";
+                    }
+                } else {
+                    el.classList.add('hidden');
+                    if(btn) {
+                        btn.className = "px-4 py-2 rounded-lg text-sm font-medium transition-all text-gray-400 hover:text-white hover:bg-gray-800";
+                    }
+                }
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Live Telemetry Simulation
+        setInterval(() => {
+            const tempEl = document.getElementById('cpu-temp');
+            const barEl = document.getElementById('cpu-bar');
+            const memEl = document.getElementById('mem-usage');
+            const memBar = document.getElementById('mem-bar');
+
+            if (tempEl && barEl) {
+                const randomTemp = (41.5 + Math.random() * 3.5).toFixed(1);
+                tempEl.innerText = randomTemp + '°C';
+                barEl.style.width = Math.min(randomTemp * 1.8, 90) + '%';
+            }
+            if (memEl && memBar) {
+                const randomMem = (33.0 + Math.random() * 2.5).toFixed(1);
+                memEl.innerText = randomMem + '%';
+                memBar.style.width = randomMem + '%';
+            }
+        }, 3000);
+
+        // Terminal CLI Simulator
+        function handleTerminalCommand(e) {
+            e.preventDefault();
+            const input = document.getElementById('terminal-input');
+            const output = document.getElementById('terminal-output');
+            const cmd = input.value.trim().toLowerCase();
+
+            if (!cmd) return;
+
+            // Print user command
+            const cmdDiv = document.createElement('div');
+            cmdDiv.innerHTML = `<span class="text-blue-400">andrewte1995@RaspberryPI5</span>:<span class="text-cyan-400">~</span>$ <span class="text-white">${input.value}</span>`;
+            output.appendChild(cmdDiv);
+
+            // Response logic
+            const resDiv = document.createElement('div');
+            resDiv.className = "text-gray-400 text-xs mt-1 space-y-1";
+
+            switch(cmd) {
+                case 'help':
+                    resDiv.innerHTML = `
+                        <div>Available commands:</div>
+                        <div class="text-yellow-400">  bio        - Display professional summary</div>
+                        <div class="text-yellow-400">  skills     - List core technical stack</div>
+                        <div class="text-yellow-400">  projects   - Show open-source repositories</div>
+                        <div class="text-yellow-400">  contact    - Get email and profile links</div>
+                        <div class="text-yellow-400">  clear      - Clear terminal output</div>
+                    `;
+                    break;
+                case 'bio':
+                    resDiv.innerHTML = `Andy Te is an IT Support & Cloud Automation Engineer based in Costa Mesa, CA. Specializing in AWS observability, Raspberry Pi 5 edge nodes, Terraform, and system integrations.`;
+                    break;
+                case 'skills':
+                    resDiv.innerHTML = `Cloud & DevOps: AWS (S3, SQS, SNS, EKS), Terraform, Kubernetes, Docker<br>Languages & DB: Python, JavaScript, MySQL, Bash<br>Tools: Postman API, Swagger, CloudWatch`;
+                    break;
+                case 'projects':
+                    resDiv.innerHTML = `1. aws-IoT-raspberrypi (IoT Telemetry Monitor)<br>2. aws-EKS-Hybrid-raspberrypi (ARM64 Kubernetes Cluster)<br>3. aws-CI-CD-raspberrypi (Automated Portfolio Deployment)`;
+                    break;
+                case 'contact':
+                    resDiv.innerHTML = `Email: andrewte1995@outlook.com<br>GitHub: github.com/ate-awscourses`;
+                    break;
+                case 'clear':
+                    output.innerHTML = '';
+                    input.value = '';
+                    return;
+                default:
+                    resDiv.innerHTML = `<span class="text-red-400">command not found: ${cmd}. Type 'help' for available commands.</span>`;
+            }
+
+            output.appendChild(resDiv);
+            input.value = '';
+            output.scrollTop = output.scrollHeight;
+        }
+    </script>
+</body>
+</html>
