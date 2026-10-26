@@ -414,7 +414,7 @@
                         </div>
                     </div>
                     <div class="pt-6 border-t border-gray-800 flex items-center justify-between">
-                        <span class="text-xs text-emerald-400 font-mono-custom"><i class="fa-solid fa-circle text-[8px] mr-1"></i> Active Telemetry</span>
+		                        <span class="text-xs text-emerald-400 font-mono-custom"><i class="fa-solid fa-circle text-[8px] mr-1"></i> Active Telemetry</span>
                         <a href="https://github.com/ate-awscourses" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center space-x-1">
                             <span>Repository</span>
                             <i class="fa-solid fa-external-link-alt text-xs"></i>
@@ -450,9 +450,40 @@
             </div>
         </div>
 
+		<!-- Project 5: Edge-to-Cloud API & MCP Telemetry Gateway -->
+		<div class="bg-cardbg border border-gray-800 p-6 rounded-2xl flex flex-col justify-between hover:border-blue-500/50 transition-all">
+    		    <div class="space-y-3">
+        	        <div class="flex items-center justify-between">
+            		    <span class="px-3 py-1 bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 rounded-full text-xs font-mono-custom">Edge-to-Cloud API</span>
+            		    <i class="fa-brands fa-github text-xl text-gray-400"></i>
+                        </div>
+                        <h3 class="font-bold text-xl text-white">aws-mcp-api-raspberrypi</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            An event-driven hybrid REST and GraphQL API gateway built on a Raspberry Pi 5. Integrates a local Model Context Protocol (MCP) server, allowing an LLM (Claude) to natively run API health checks, evaluate simulated fault states, and query AWS DynamoDB for data synchronization verification.
+                        </p>
+                        <div class="flex flex-wrap gap-1.5 pt-2">
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono-custom text-gray-300">Python</span>
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono-custom text-gray-300">FastAPI</span>
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono-custom text-gray-300">GraphQL</span>
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono-custom text-gray-300">AWS Lambda</span>
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono-custom text-gray-300">DynamoDB</span>
+                            <span class="px-2 py-0.5 bg-gray-800 rounded text-xs font-mono-custom text-gray-300">FastMCP</span>
+       		        </div>
+                    </div>
+                    <div class="pt-6 border-t border-gray-800 flex items-center justify-between">
+                        <span class="text-xs text-blue-400 font-mono-custom"><i class="fa-solid fa-circle text-[8px] mr-1"></i> ARM64 Edge Node</span>
+                        <a href="https://github.com/ate-awscourses/aws-mcp-api-raspberrypi" target="_blank" class="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center space-x-1">
+                            <span>Repository</span>
+                            <i class="fa-solid fa-external-link-alt text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- ================= TAB 4: TERMINAL & CLI ================= -->
         <div id="tab-terminal" class="hidden space-y-6 animate-fade">
-            <div>
+           <div>
                 <h2 class="text-2xl font-bold mb-2">Interactive Cyber Terminal</h2>
                 <p class="text-gray-400 text-sm">Type commands below like <code class="text-blue-400 font-mono-custom">help</code>, <code class="text-blue-400 font-mono-custom">bio</code>, <code class="text-blue-400 font-mono-custom">skills</code>, <code class="text-blue-400 font-mono-custom">projects</code>, or <code class="text-blue-400 font-mono-custom">clear</code>.</p>
             </div>
